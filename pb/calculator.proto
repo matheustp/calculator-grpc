@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package calculator_grpc;
+
+option go_package="calcpb";
+
+message CalculatorRequest {
+    double num1 = 1;
+    double num2 = 2;
+}
+
+message CalculatorResponse {
+    double result = 1;
+}
+
+service Calculator {
+    rpc Calc(CalculatorRequest) returns (CalculatorResponse){};
+}
